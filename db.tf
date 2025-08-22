@@ -5,7 +5,7 @@ resource "aws_db_subnet_group" "swiggy-db-sub-grp" {
 }
 
 resource "aws_db_instance" "swiggy-db" {
-  allocated_storage           = 100
+  allocated_storage           = 50
   storage_type                = "gp3"
   engine                      = "mysql"
   engine_version              = "8.0.41"
@@ -21,7 +21,7 @@ resource "aws_db_instance" "swiggy-db" {
   publicly_accessible          = false
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
     ignore_changes  = all
   }
 }
